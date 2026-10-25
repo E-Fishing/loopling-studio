@@ -18,7 +18,7 @@ Tools stay locked until you learn them, so the screen never gets overwhelming. T
 
 ## Try it
 
-**[Open Loopling Studio](https://LIVE-LINK-GOES-HERE)**
+**[Open Loopling Studio](https://e-fishing.github.io/loopling-studio/)**
 
 ## Run it on your own computer
 
