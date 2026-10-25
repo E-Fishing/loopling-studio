@@ -1,0 +1,6 @@
+# old voice takes that are no longer used
+voice-retired/
+# local tools and one-off files
+.claude/
+Maple-Lane.wav
+Maple-Lane.loopling.json

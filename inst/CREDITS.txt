@@ -1,0 +1,23 @@
+Loopling's real-instrument recordings, their sources and licenses.
+The app shows these credits in Project > Credits (and links to them from the Sound picker).
+
+inst/piano/        Salamander Grand Piano by Alexander Holm (Yamaha C5). CC BY 3.0.
+                   https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html  (MP3s via https://github.com/Tonejs/audio)
+inst/kit/          kick, snare, chat, ohat, tom: MuldjordKit recorded by Lars Muldjord (FreePats). CC BY 4.0.
+                   https://freepats.zenvoid.org/Percussion/acoustic-drum-kit.html  (converted from FLAC to trimmed mono WAV)
+                   rim: claves from VSCO 2 Community Edition by Versilian Studios. CC0.
+inst/deep-bass/    Electric bass from Karoryfer Samples, via tonejs-instruments by Nicholaus Brosowsky. CC BY 3.0.
+                   https://github.com/nbrosowsky/tonejs-instruments
+inst/bright-pluck/ Harp, inst/flute/ Flute, inst/organ/ Organ: VSCO 2 Community Edition by Versilian Studios,
+                   via tonejs-instruments by Nicholaus Brosowsky. CC BY 3.0.
+inst/pluck-bass/   Solo contrabass pizzicato, inst/music-box/ Glockenspiel: VSCO 2 Community Edition by
+                   Versilian Studios, CC0. https://github.com/sgossner/VSCO-2-CE  (converted to trimmed mono WAV;
+                   files renamed by true pitch, one octave above VSCO's labels)
+inst/violin/, inst/clarinet/, inst/bassoon/, inst/trumpet/, inst/trombone/, inst/french-horn/, inst/tuba/:
+                   VSCO 2 Community Edition by Versilian Studios, via tonejs-instruments by Nicholaus Brosowsky.
+                   CC BY 3.0. https://github.com/nbrosowsky/tonejs-instruments
+                   (clarinet "Fs6" renamed F6: its fundamental measures 1397 Hz)
+inst/sax/          Saxophone from Karoryfer Samples, via tonejs-instruments by Nicholaus Brosowsky. CC BY 3.0.
+inst/oboe/, inst/viola/, inst/cello/, inst/strings/ (string section):
+                   VSCO 2 Community Edition by Versilian Studios, CC0. https://github.com/sgossner/VSCO-2-CE
+                   (converted to trimmed mono WAV; files renamed by true pitch, one octave above VSCO's labels)

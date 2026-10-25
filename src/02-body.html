@@ -1,0 +1,90 @@
+
+<header class="topbar" id="topbar">
+  <div class="brand" data-hint="<b>Loopling Studio</b> is a music maker built for total beginners. It teaches you the ideas every DAW (music software) shares.">
+    <b>Loopling</b><span class="dots"><i style="background:var(--t1)"></i><i style="background:var(--t2)"></i><i style="background:var(--t3)"></i><i style="background:var(--t4)"></i></span>
+  </div>
+  <div class="seg" role="group" aria-label="Mode">
+    <button id="modeLearn" aria-pressed="true" data-hint="<b>Learn mode</b> walks you through one idea at a time. Buttons you have not learned yet stay locked so nothing is overwhelming.">Learn</button>
+    <button id="modeStudio" aria-pressed="false" data-hint="<b>Studio mode</b> unlocks every tool at once, like a full DAW. Switch back to Learn any time.">Studio</button>
+  </div>
+  <div class="transport">
+    <button class="playbtn" id="playBtn" data-lock="0" aria-label="Play" data-hint="<b>Play / Stop</b> (shortcut: Spacebar). Every DAW has these in its <b>transport</b>, the row of tape-deck style controls."></button>
+    <button class="recbtn" id="recBtn" data-lock="5" aria-label="Record" data-hint="<b>Record</b>: arm this, press Play, then play notes on your computer keyboard. With <b>Snap</b> on, your notes land right on the beat. Turn Snap off to keep your exact timing."><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5"/></svg></button>
+    <button class="btn" id="snapBtn" data-lock="5" aria-pressed="false" data-hint="<b>Snap</b>: when it&rsquo;s on, notes and drums you record or click in land exactly on the grid. When it&rsquo;s off, they go exactly where you play or click, even in between the boxes, and you can still line them up later with <b>Quantize</b>. DAWs call this <b>snap to grid</b>.">
+      <svg class="i" viewBox="0 0 24 24"><path d="M5 3h4v9a3 3 0 006 0V3h4v9a7 7 0 01-14 0z"/><path d="M5 7h4M15 7h4"/></svg><span>Snap</span>
+    </button>
+    <div class="seg" id="patSongSeg" data-lock="7" role="group" aria-label="Playback mode" data-hint="<b>Pattern</b> loops the pattern you are editing. <b>Song</b> plays your whole arrangement from the Arrange tab. FL Studio has this exact switch (PAT / SONG).">
+      <button id="patModeBtn" aria-pressed="true">Pattern</button>
+      <button id="songModeBtn" aria-pressed="false">Song</button>
+    </div>
+    <div class="bpmbox" id="bpmBox" data-lock="0" data-hint="<b>Tempo</b> is the speed of your song in <b>BPM</b> (beats per minute). 70 to 90 feels relaxed, 120 to 130 is dance music, 140+ is fast.">
+      <button id="bpmDown" aria-label="Slower">&minus;</button>
+      <input id="bpmInput" type="number" min="50" max="522" value="90" aria-label="Tempo in BPM">
+      <button id="bpmUp" aria-label="Faster">+</button>
+      <span class="label">BPM</span>
+    </div>
+    <button class="btn" id="metroBtn" data-lock="0" data-hint="<b>Metronome</b>: a click on every beat to help you keep time. The first beat of each bar clicks higher.">
+      <svg class="i" viewBox="0 0 24 24"><path d="M8 21h8l-3-17h-2z"/><path d="M12 15l6-8"/></svg><span>Click</span>
+    </button>
+    <div class="posdisp" id="posDisp" data-lock="0" data-hint="<b>Position</b>: which bar and beat is playing right now. Music is counted in bars of 4 beats: 1, 2, 3, 4, then the next bar.">Bar 1 · Beat 1</div>
+  </div>
+  <div class="keybox" id="keyBox" data-lock="2" data-hint="<b>Key</b> and <b>scale</b>: a family of notes that sound good together. Changing the key moves every note up or down so your song stays in tune with itself.">
+    <select class="sel" id="keySelect" aria-label="Key"></select>
+    <select class="sel" id="scaleSelect" aria-label="Scale"></select>
+  </div>
+  <div class="topright">
+    <div class="meter" id="masterMeter" data-hint="<b>Master level</b>: how loud your whole song is. If it turns red, the song is too loud and may distort. Turn some tracks down in the Mixer."><i></i></div>
+    <button class="btn ghost" id="undoBtn" aria-label="Undo" data-hint="<b>Undo</b> (Ctrl+Z). Experiment freely, you can always go back."><svg class="i" viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12h-3"/></svg></button>
+    <button class="btn ghost" id="redoBtn" aria-label="Redo" data-hint="<b>Redo</b> (Ctrl+Shift+Z)."><svg class="i" viewBox="0 0 24 24"><path d="M15 14l5-5-5-5"/><path d="M20 9H10a6 6 0 000 12h3"/></svg></button>
+    <button class="btn" id="dictBtn" data-hint="<b>DAW Dictionary</b>: every idea in Loopling, and what FL Studio, GarageBand and Ableton Live call it.">
+      <svg class="i" viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 21V5"/></svg><span>Dictionary</span></button>
+    <button class="btn" id="saveBtn" data-lock="8" data-hint="<b>Save</b> a copy of your project to your computer. Loopling also keeps your latest work in this browser automatically.">
+      <svg class="i" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><path d="M8 21v-7h8v7"/></svg><span>Save</span></button>
+    <button class="btn primary" id="exportBtn" data-lock="8" data-hint="<b>Export</b> turns your song into a real audio file (WAV) you can share or upload. Also called <b>bouncing</b> or <b>rendering</b>.">
+      <svg class="i" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Export</span></button>
+    <div class="menuwrap">
+      <button class="btn" id="projBtn" aria-haspopup="true" data-hint="<b>Project</b> menu: start a new song, open a saved one, or load the demo song.">Project
+        <svg class="i" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="menu" id="projMenu" hidden>
+        <button id="mNew">New empty song<small>Start from a blank canvas</small></button>
+        <button id="mDemo">Open the demo song<small>Hear what these tools can make</small></button>
+        <button id="mOpen">Open a saved project&hellip;<small>A .json file you saved earlier</small></button>
+        <button id="mRename">Rename song</button>
+        <button id="mTheme">Switch light / dark</button>
+        <button id="mMotion">Woofer motion: <b id="motionLabel">Lively</b><small>Lively hops and flies. Calm glides gently.</small></button>
+        <button id="mReset">Restart all lessons</button>
+        <button id="mSettings">Settings<small>Choose which keys play the piano and drums</small></button>
+        <button id="mCredits">Credits<small>Who made the sounds</small></button>
+      </div>
+      <input type="file" id="fileInput" accept=".json,application/json" hidden>
+    </div>
+  </div>
+</header>
+
+<div class="hintbar" id="hintBar" data-hint="This is the <b>hint bar</b>. Point at anything in Loopling and it explains what it does in plain words.">
+  <span class="q" aria-hidden="true">?</span><span id="hintText">Point at anything to see what it does.</span>
+  <div class="lessonpill" id="lessonPill"></div>
+</div>
+
+<main class="workspace">
+  <aside class="panel rack" id="rack" aria-label="Tracks"></aside>
+
+  <section class="panel deck" aria-label="Editor">
+    <nav class="tabs" role="tablist">
+      <button role="tab" id="tab-editor" aria-selected="true" data-hint="<b>Editor</b>: write the notes and beats for the selected track.">
+        <svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h3M7 13h6M7 17h4"/></svg>Editor</button>
+      <button role="tab" id="tab-mixer" aria-selected="false" data-lock="6" data-hint="<b>Mixer</b>: balance the volume of every track, pan them left or right, and add effects like reverb.">
+        <svg class="i" viewBox="0 0 24 24"><path d="M6 3v18M12 3v18M18 3v18"/><rect x="4" y="13" width="4" height="3" rx="1"/><rect x="10" y="6" width="4" height="3" rx="1"/><rect x="16" y="10" width="4" height="3" rx="1"/></svg>Mixer</button>
+      <button role="tab" id="tab-arrange" aria-selected="false" data-lock="7" data-hint="<b>Arrange</b>: lay your patterns out on a timeline to build a full song with an intro, verse and chorus.">
+        <svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="7" height="4" rx="1"/><rect x="11" y="5" width="10" height="4" rx="1"/><rect x="7" y="11" width="10" height="4" rx="1"/><rect x="3" y="17" width="12" height="4" rx="1"/></svg>Arrange</button>
+    </nav>
+    <div class="view" id="editorView"></div>
+    <div class="view" id="mixerView" hidden></div>
+    <div class="view" id="arrangeView" hidden></div>
+  </section>
+
+</main>
+<div id="guideRing"></div>
+<div class="guide" id="guide" hidden></div>
+<div id="modalRoot"></div>
+<div id="toasts" aria-live="polite"></div>
